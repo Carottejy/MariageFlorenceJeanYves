@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmer sa venue — Florence &amp; Jean-Yves</title>
+  <meta name="description" content="Confirmez votre présence au mariage de Florence et Jean-Yves, le 23 octobre 2027.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auvent" aria-hidden="true"></div>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="index.html">L'Invitation</a>
+    <a href="rsvp.html" aria-current="page">Confirmer sa venue</a>
+    <a href="costumes.html">Costumes</a>
+    <a href="hebergements.html">Se loger</a>
+  </nav>
+
+  <main>
+    <section class="cadre">
+      <div class="centre">
+        <h1>Confirmer sa venue</h1>
+        <p class="sous-titre">Merci de nous répondre avant le <span id="date-limite">1er juillet 2027</span>.</p>
+        <p>Une seule réponse par foyer suffit&nbsp;: indiquez simplement combien vous serez.</p>
+      </div>
+
+      <span class="fleuron" aria-hidden="true">❧ ❦ ☙</span>
+
+      <form id="rsvp" class="formulaire" novalidate>
+        <div class="duo">
+          <div class="champ">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+          </div>
+          <div class="champ">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+          </div>
+        </div>
+
+        <div class="champ">
+          <div class="champ-titre" id="titre-presence">Serez-vous des nôtres&nbsp;?</div>
+          <div class="choix-presence" role="radiogroup" aria-labelledby="titre-presence">
+            <label><input type="radio" name="presence" value="Oui" checked required> Oui, avec grand plaisir&nbsp;!</label>
+            <label><input type="radio" name="presence" value="Non"> Hélas, nous ne pourrons venir</label>
+          </div>
+        </div>
+
+        <div id="bloc-nombres">
+          <div class="duo">
+            <div class="champ">
+              <label for="adultes">Adultes et enfants de plus de 12&nbsp;ans</label>
+              <div class="compteur">
+                <button type="button" data-cible="adultes" data-pas="-" aria-label="Retirer un adulte">−</button>
+                <input type="number" id="adultes" name="adultes" min="1" max="20" value="1" inputmode="numeric" required>
+                <button type="button" data-cible="adultes" data-pas="+" aria-label="Ajouter un adulte">+</button>
+              </div>
+              <div class="aide">Vous compris</div>
+            </div>
+            <div class="champ">
+              <label for="enfants">Enfants de moins de 12&nbsp;ans</label>
+              <div class="compteur">
+                <button type="button" data-cible="enfants" data-pas="-" aria-label="Retirer un enfant">−</button>
+                <input type="number" id="enfants" name="enfants" min="0" max="20" value="0" inputmode="numeric" required>
+                <button type="button" data-cible="enfants" data-pas="+" aria-label="Ajouter un enfant">+</button>
+              </div>
+            </div>
+          </div>
+          <p id="total-convives" class="total-convives" aria-live="polite"></p>
+        </div>
+
+        <div class="duo">
+          <div class="champ">
+            <label for="email">E-mail <span class="aide">(facultatif)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+          <div class="champ">
+            <label for="telephone">Téléphone <span class="aide">(facultatif)</span></label>
+            <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="message">Un mot pour les mariés&nbsp;? <span class="aide">(allergies, régime alimentaire, question…)</span></label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <div class="boutons">
+          <button type="submit" class="bouton">Envoyer ma réponse</button>
+        </div>
+
+        <div id="message-retour" class="message-retour" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span class="initiales">F &amp; J</span>
+    Florence &amp; Jean-Yves — 23 octobre 2027 — Domaine des Mylords, Tarascon
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

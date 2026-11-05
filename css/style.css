@@ -1,0 +1,627 @@
+/* =========================================================
+   Mariage Florence & Jean-Yves — « Marché automnal du XVIIIᵉ siècle »
+   ========================================================= */
+
+:root {
+  --parchemin: #f6ecd6;
+  --parchemin-fonce: #ead9b4;
+  --encre: #3b2416;
+  --bordeaux: #7a1f2b;
+  --bordeaux-fonce: #5a1520;
+  --citrouille: #c8641e;
+  --ocre: #c99a2e;
+  --or: #b8892b;
+  --foret: #3f5a36;
+  --prune: #5b3a52;
+  --ombre: rgba(59, 36, 22, 0.18);
+  --titre: "IM Fell English SC", "Cormorant Garamond", Georgia, serif;
+  --texte: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --script: "Pinyon Script", "Cormorant Garamond", cursive;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--texte);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--encre);
+  background-color: var(--parchemin);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(201, 154, 46, 0.18), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(122, 31, 43, 0.12), transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0 0.12 0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a { color: var(--bordeaux); }
+a:hover { color: var(--citrouille); }
+
+img { max-width: 100%; }
+
+/* ---------- Auvent de marché ---------- */
+.auvent {
+  height: 34px;
+  background: repeating-linear-gradient(90deg,
+      var(--bordeaux) 0 46px, var(--parchemin-fonce) 46px 92px);
+  position: relative;
+  box-shadow: 0 4px 8px var(--ombre);
+}
+.auvent::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -16px;
+  height: 16px;
+  background:
+    radial-gradient(circle at 23px 0, var(--bordeaux) 22px, transparent 23px) 0 0 / 92px 16px repeat-x,
+    radial-gradient(circle at 69px 0, var(--parchemin-fonce) 22px, transparent 23px) 0 0 / 92px 16px repeat-x;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.6rem;
+  padding: 1.6rem 1rem 0.6rem;
+  font-family: var(--titre);
+  font-size: 1.15rem;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--encre);
+  padding: 0.2rem 0.4rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--bordeaux);
+  border-bottom-color: var(--ocre);
+}
+
+/* ---------- Mise en page ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cadre {
+  background: rgba(255, 250, 238, 0.82);
+  border: 1px solid var(--or);
+  outline: 4px double var(--or);
+  outline-offset: 6px;
+  border-radius: 2px;
+  padding: 2.2rem 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 10px 30px var(--ombre);
+  position: relative;
+}
+.cadre::before,
+.cadre::after {
+  content: "❦";
+  position: absolute;
+  font-size: 1.6rem;
+  color: var(--citrouille);
+  background: var(--parchemin);
+  padding: 0 0.4rem;
+  line-height: 1;
+}
+.cadre::before { top: -0.8rem; left: 50%; transform: translateX(-50%); }
+.cadre::after { bottom: -0.8rem; left: 50%; transform: translateX(-50%) rotate(180deg); }
+
+h1, h2, h3 {
+  font-family: var(--titre);
+  font-weight: normal;
+  color: var(--bordeaux);
+  line-height: 1.15;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0.2em 0; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); margin: 0.4em 0 0.6em; }
+h3 { font-size: 1.4rem; margin: 0.6em 0 0.3em; }
+
+.centre { text-align: center; }
+
+.sous-titre {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--prune);
+  margin-top: 0;
+}
+
+.fleuron {
+  display: block;
+  text-align: center;
+  color: var(--ocre);
+  font-size: 1.6rem;
+  letter-spacing: 0.6rem;
+  margin: 1rem 0;
+}
+
+/* ---------- Accueil ---------- */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+.hero .annonce {
+  font-family: var(--titre);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: var(--foret);
+}
+.hero .noms {
+  font-family: var(--script);
+  font-size: clamp(3.2rem, 11vw, 6.5rem);
+  color: var(--bordeaux);
+  line-height: 1.1;
+  margin: 0.3rem 0;
+  text-shadow: 1px 2px 0 rgba(201, 154, 46, 0.35);
+}
+.hero .noms .et {
+  display: inline-block;
+  font-size: 0.6em;
+  color: var(--citrouille);
+  margin: 0 0.2em;
+}
+.hero .theme {
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--prune);
+}
+
+.blason {
+  width: 150px;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+.infos-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin: 1.5rem 0;
+}
+.info-carte {
+  text-align: center;
+  padding: 1.4rem 1rem;
+  border: 1px solid var(--parchemin-fonce);
+  background: rgba(246, 236, 214, 0.65);
+  border-radius: 3px;
+}
+.info-carte .icone {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.info-carte .etiquette {
+  font-family: var(--titre);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--foret);
+}
+.info-carte .valeur {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+.info-carte .detail { font-size: 1.05rem; color: #6b4e3a; }
+
+.compte-a-rebours {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.4rem 0 0.4rem;
+}
+.compte-a-rebours div {
+  min-width: 88px;
+  padding: 0.6rem 0.4rem;
+  background: var(--bordeaux);
+  color: var(--parchemin);
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: inset 0 0 0 2px var(--ocre);
+}
+.compte-a-rebours strong {
+  display: block;
+  font-family: var(--titre);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+.compte-a-rebours span { font-size: 0.9rem; letter-spacing: 0.08em; }
+
+.carte-lieu {
+  width: 100%;
+  height: 340px;
+  border: 1px solid var(--or);
+  border-radius: 3px;
+  margin-top: 1rem;
+  filter: sepia(0.25) saturate(0.9);
+}
+
+.gps {
+  font-family: "Courier New", monospace;
+  background: var(--parchemin-fonce);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 1.05rem;
+}
+
+/* ---------- Boutons ---------- */
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+.bouton {
+  display: inline-block;
+  font-family: var(--titre);
+  font-size: 1.1rem;
+  padding: 0.65rem 1.4rem;
+  background: var(--bordeaux);
+  color: var(--parchemin);
+  border: 2px solid var(--bordeaux-fonce);
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--bordeaux-fonce), 0 6px 12px var(--ombre);
+  transition: transform 0.15s, background 0.15s;
+}
+.bouton:hover { background: var(--citrouille); color: #fff; transform: translateY(-1px); }
+.bouton:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--bordeaux-fonce); }
+.bouton.secondaire {
+  background: transparent;
+  color: var(--bordeaux);
+  border-color: var(--bordeaux);
+  box-shadow: none;
+}
+.bouton.secondaire:hover { background: var(--bordeaux); color: var(--parchemin); }
+
+/* ---------- Formulaire RSVP ---------- */
+.formulaire { max-width: 640px; margin: 0 auto; }
+.champ { margin-bottom: 1.3rem; }
+.champ label,
+.champ-titre {
+  display: block;
+  font-family: var(--titre);
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+  color: var(--bordeaux);
+}
+.champ .aide { font-size: 0.98rem; color: #6b4e3a; font-style: italic; }
+.champ input[type="text"],
+.champ input[type="email"],
+.champ input[type="tel"],
+.champ input[type="number"],
+.champ textarea,
+.champ select {
+  width: 100%;
+  font-family: var(--texte);
+  font-size: 1.2rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--or);
+  border-radius: 2px;
+  background: #fffaf0;
+  color: var(--encre);
+}
+.champ input:focus,
+.champ textarea:focus,
+.champ select:focus {
+  outline: 2px solid var(--citrouille);
+  outline-offset: 1px;
+}
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.choix-presence { display: flex; gap: 1rem; flex-wrap: wrap; }
+.choix-presence label {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--texte);
+  font-size: 1.15rem;
+  color: var(--encre);
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--or);
+  background: #fffaf0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.choix-presence input { accent-color: var(--bordeaux); width: 1.2rem; height: 1.2rem; }
+.choix-presence label:has(input:checked) {
+  background: var(--parchemin-fonce);
+  border-color: var(--bordeaux);
+}
+
+.compteur {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.compteur button {
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 1.4rem;
+  font-family: var(--titre);
+  border: 1px solid var(--bordeaux);
+  background: var(--parchemin-fonce);
+  color: var(--bordeaux);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.compteur button:hover { background: var(--bordeaux); color: var(--parchemin); }
+.compteur input { text-align: center; max-width: 5rem; }
+
+.total-convives {
+  text-align: center;
+  font-style: italic;
+  color: var(--foret);
+  margin: 0.4rem 0 1.4rem;
+}
+
+.message-retour {
+  display: none;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  border: 1px dashed var(--foret);
+  background: rgba(63, 90, 54, 0.08);
+}
+.message-retour.visible { display: block; }
+.message-retour.erreur { border-color: var(--bordeaux); background: rgba(122, 31, 43, 0.08); }
+
+.masque { display: none !important; }
+
+/* ---------- Costumes ---------- */
+.intro-costumes { max-width: 820px; margin: 0 auto; text-align: center; }
+
+.onglets {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.onglets button {
+  font-family: var(--titre);
+  font-size: 1.05rem;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--or);
+  background: #fffaf0;
+  color: var(--encre);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.onglets button[aria-pressed="true"] {
+  background: var(--foret);
+  color: var(--parchemin);
+  border-color: var(--foret);
+}
+
+.deux-colonnes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.colonne-titre {
+  text-align: center;
+  font-family: var(--titre);
+  font-size: 1.9rem;
+  color: var(--bordeaux);
+  border-bottom: 2px solid var(--ocre);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.colonne-titre .symbole { color: var(--citrouille); }
+
+.costume {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 1rem;
+  padding: 1.1rem 1rem;
+  margin-bottom: 1.1rem;
+  background: rgba(255, 250, 238, 0.85);
+  border: 1px solid var(--parchemin-fonce);
+  border-left: 4px solid var(--citrouille);
+  border-radius: 2px;
+  box-shadow: 0 3px 10px var(--ombre);
+}
+.costume svg { width: 88px; height: 132px; }
+.costume h3 { margin: 0 0 0.1rem; font-size: 1.3rem; }
+.costume .region {
+  font-family: var(--titre);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--foret);
+}
+.costume p { margin: 0.4rem 0; font-size: 1.08rem; }
+.costume ul { margin: 0.3rem 0 0.4rem; padding-left: 1.1rem; font-size: 1.05rem; }
+.costume .astuce { font-size: 1rem; font-style: italic; color: var(--prune); }
+.costume .voir {
+  font-size: 0.98rem;
+}
+
+.palette {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+.palette span {
+  width: 1.2rem; height: 1.2rem; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.conseils {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.conseils div {
+  padding: 1rem;
+  background: rgba(246, 236, 214, 0.8);
+  border-top: 3px solid var(--foret);
+}
+.conseils strong { font-family: var(--titre); color: var(--bordeaux); font-weight: normal; font-size: 1.15rem; }
+
+/* ---------- Hébergements ---------- */
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 1rem 0 1.6rem;
+}
+.filtres button {
+  font-family: var(--titre);
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--or);
+  background: #fffaf0;
+  color: var(--encre);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.filtres button[aria-pressed="true"] {
+  background: var(--bordeaux);
+  color: var(--parchemin);
+  border-color: var(--bordeaux);
+}
+
+.logements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+.logement {
+  background: rgba(255, 250, 238, 0.92);
+  border: 1px solid var(--parchemin-fonce);
+  border-top: 5px solid var(--ocre);
+  padding: 1.1rem 1.2rem 1rem;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px var(--ombre);
+  display: flex;
+  flex-direction: column;
+}
+.logement[data-type="hotel"] { border-top-color: var(--bordeaux); }
+.logement[data-type="chambre"] { border-top-color: var(--citrouille); }
+.logement[data-type="gite"] { border-top-color: var(--foret); }
+.logement h3 { margin: 0.2rem 0 0.2rem; font-size: 1.35rem; }
+.logement .type {
+  font-family: var(--titre);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--foret);
+}
+.logement .trajet {
+  align-self: flex-end;
+  font-size: 0.95rem;
+  background: var(--parchemin-fonce);
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  color: var(--encre);
+}
+.logement address { font-style: normal; margin: 0.3rem 0 0.6rem; font-size: 1.05rem; }
+.logement .contact { list-style: none; margin: 0; padding: 0; font-size: 1.05rem; }
+.logement .contact li { margin: 0.15rem 0; word-break: break-word; }
+.logement .contact .lib { display: inline-block; width: 1.6rem; }
+.logement .note { margin-top: auto; padding-top: 0.6rem; font-size: 0.98rem; font-style: italic; color: #6b4e3a; }
+
+.plateformes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.plateformes a {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--or);
+  background: #fffaf0;
+  text-decoration: none;
+  font-family: var(--titre);
+  font-size: 1.15rem;
+  border-radius: 2px;
+}
+.plateformes a small { display: block; font-family: var(--texte); font-size: 0.95rem; color: #6b4e3a; }
+.plateformes a:hover { background: var(--parchemin-fonce); }
+
+.avertissement {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b4e3a;
+  text-align: center;
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+}
+
+/* ---------- Pied de page ---------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  font-style: italic;
+  color: #6b4e3a;
+}
+footer .initiales {
+  font-family: var(--script);
+  font-size: 2.4rem;
+  color: var(--bordeaux);
+  display: block;
+}
+
+/* ---------- Feuilles d'automne ---------- */
+.feuilles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.feuille {
+  position: absolute;
+  top: -40px;
+  font-size: 22px;
+  opacity: 0.55;
+  animation: chute linear infinite;
+}
+@keyframes chute {
+  0%   { transform: translate(0, -40px) rotate(0deg); }
+  50%  { transform: translate(40px, 50vh) rotate(180deg); }
+  100% { transform: translate(-20px, 105vh) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feuille { display: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 780px) {
+  body { font-size: 1.12rem; }
+  .cadre { padding: 1.6rem 1.1rem; outline-offset: 3px; }
+  .deux-colonnes { grid-template-columns: 1fr; }
+  .duo { grid-template-columns: 1fr; }
+  .costume { grid-template-columns: 64px 1fr; }
+  .costume svg { width: 64px; height: 96px; }
+  .nav { gap: 0.2rem 0.9rem; font-size: 1.02rem; }
+}
+
+@media print {
+  .auvent, .nav, .feuilles, .boutons, .filtres { display: none; }
+  body { background: #fff; }
+  .cadre { box-shadow: none; }
+}
