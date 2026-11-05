@@ -5,68 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Florence &amp; Jean-Yves — 23 octobre 2027</title>
   <meta name="description" content="Mariage de Florence et Jean-Yves, samedi 23 octobre 2027 à 14h30 au Domaine des Mylords, Tarascon. Thème : marché automnal du XVIIIᵉ siècle.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍂</text></svg>">
+  <meta name="theme-color" content="#7f3418">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23b4532a'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='Georgia' font-size='46' fill='%23f3e3b6'%3EFJ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+SC:wght@500;600&family=IM+Fell+French+Canon:ital@1&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="auvent" aria-hidden="true"></div>
-  <nav class="nav" aria-label="Navigation principale">
-    <a href="index.html" aria-current="page">L'Invitation</a>
-    <a href="rsvp.html">Confirmer sa venue</a>
-    <a href="costumes.html">Costumes</a>
-    <a href="hebergements.html">Se loger</a>
-  </nav>
+  <header class="entete">
+    <a class="monogramme" href="index.html" aria-label="Accueil">F<span>&amp;</span>J</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">L'Invitation</a>
+      <a href="rsvp.html">Répondre</a>
+      <a href="costumes.html">Costumes</a>
+      <a href="hebergements.html">Se loger</a>
+    </nav>
+  </header>
 
   <main>
-    <section class="hero">
-      <svg class="blason" viewBox="0 0 160 150" aria-hidden="true">
-        <g fill="none" stroke="#b8892b" stroke-width="2">
-          <path d="M80 8 C 50 8 30 18 30 18 L30 70 C30 105 55 128 80 140 C105 128 130 105 130 70 L130 18 C130 18 110 8 80 8 Z" fill="#fffaf0"/>
-          <path d="M80 16 C 55 16 38 24 38 24 L38 70 C38 100 59 120 80 131 C101 120 122 100 122 70 L122 24 C122 24 105 16 80 16 Z"/>
-        </g>
-        <!-- épis et feuilles -->
-        <g stroke="#c8641e" stroke-width="2" fill="#c99a2e">
-          <path d="M18 130 Q 28 90 22 50" fill="none"/>
-          <ellipse cx="21" cy="58" rx="4" ry="8" transform="rotate(-15 21 58)"/>
-          <ellipse cx="25" cy="74" rx="4" ry="8" transform="rotate(-20 25 74)"/>
-          <ellipse cx="26" cy="92" rx="4" ry="8" transform="rotate(-25 26 92)"/>
-          <path d="M142 130 Q 132 90 138 50" fill="none"/>
-          <ellipse cx="139" cy="58" rx="4" ry="8" transform="rotate(15 139 58)"/>
-          <ellipse cx="135" cy="74" rx="4" ry="8" transform="rotate(20 135 74)"/>
-          <ellipse cx="134" cy="92" rx="4" ry="8" transform="rotate(25 134 92)"/>
-        </g>
-        <text x="80" y="88" text-anchor="middle" font-family="Pinyon Script, cursive" font-size="44" fill="#7a1f2b">F&amp;J</text>
-        <text x="80" y="112" text-anchor="middle" font-family="IM Fell English SC, serif" font-size="12" fill="#3f5a36" letter-spacing="2">MMXXVII</text>
-      </svg>
-
-      <div class="annonce">Oyez, oyez&nbsp;! Vous êtes conviés au mariage de</div>
-      <div class="noms">Florence <span class="et">&amp;</span> Jean-Yves</div>
-      <p class="theme">en un grand marché automnal du XVIII<sup>e</sup> siècle</p>
+    <section class="accueil">
+      <div class="faire-part">
+        <div class="annonce">Vous êtes priés d'assister au mariage de</div>
+        <div class="noms">Florence<span class="et">&amp;</span>Jean-Yves</div>
+        <span class="fleuron" aria-hidden="true"></span>
+        <p class="theme">en un grand marché d'automne,<br>à la manière du XVIII<sup>e</sup> siècle</p>
+      </div>
+      <figure style="margin:0">
+        <div class="cadre-dore">
+          <img src="images/francois-boucher-an-autumn-pastoral-wga02894-960.jpg" alt="François Boucher, Pastorale d'automne, 1749" width="960" height="1283">
+        </div>
+        <figcaption class="legende">François Boucher, <em>Pastorale d'automne</em>, 1749</figcaption>
+      </figure>
     </section>
 
-    <section class="cadre centre">
+    <section class="panneau centre">
       <h2>Le jour des noces</h2>
-
-      <div class="infos-grille">
-        <div class="info-carte">
-          <span class="icone" aria-hidden="true">📜</span>
-          <div class="etiquette">Date</div>
-          <div class="valeur">Samedi 23 octobre 2027</div>
+      <div class="infos">
+        <div>
+          <div class="etiquette">Le</div>
+          <div class="valeur">Samedi<br>23 octobre 2027</div>
         </div>
-        <div class="info-carte">
-          <span class="icone" aria-hidden="true">🕰️</span>
-          <div class="etiquette">Heure</div>
-          <div class="valeur">14h30</div>
+        <div>
+          <div class="etiquette">À</div>
+          <div class="valeur">14 h 30</div>
           <div class="detail">Merci d'arriver un peu en avance</div>
         </div>
-        <div class="info-carte">
-          <span class="icone" aria-hidden="true">🏰</span>
-          <div class="etiquette">Lieu</div>
+        <div>
+          <div class="etiquette">Au</div>
           <div class="valeur">Domaine des Mylords</div>
-          <div class="detail">Petite route d'Arles<br>13150 Tarascon</div>
+          <div class="detail">Petite route d'Arles, 13150 Tarascon</div>
         </div>
       </div>
 
@@ -75,39 +63,35 @@
         <div><strong data-h>—</strong><span>heures</span></div>
         <div><strong data-m>—</strong><span>minutes</span></div>
       </div>
+    </section>
 
-      <span class="fleuron" aria-hidden="true">❧ ❦ ☙</span>
-
+    <section class="panneau centre">
       <h2>S'y rendre</h2>
       <p>
         <strong>Domaine des Mylords</strong> — Petite route d'Arles, 13150 Tarascon (Bouches-du-Rhône)<br>
-        Point GPS&nbsp;: <span class="gps">43.772285, 4.667647</span><br>
-        <span class="detail">soit 43°46′20″ N, 4°40′04″ E</span>
+        Point GPS&nbsp;: <span class="gps">43.772285, 4.667647</span>
+        <span class="aide">(43°46′20″ N, 4°40′04″ E)</span>
       </p>
-
-      <iframe class="carte-lieu"
-        title="Carte du Domaine des Mylords"
-        loading="lazy"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=4.6476%2C43.7623%2C4.6876%2C43.7823&amp;layer=mapnik&amp;marker=43.772285%2C4.667647"></iframe>
-
+      <div class="cadre-dore" style="margin-top:1.2rem">
+        <iframe class="carte-lieu" title="Carte du Domaine des Mylords" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=4.6476%2C43.7623%2C4.6876%2C43.7823&amp;layer=mapnik&amp;marker=43.772285%2C4.667647"></iframe>
+      </div>
       <div class="boutons">
         <a class="bouton" href="https://www.google.com/maps/dir/?api=1&amp;destination=43.772285,4.667647" target="_blank" rel="noopener">Itinéraire Google Maps</a>
-        <a class="bouton secondaire" href="https://waze.com/ul?ll=43.772285,4.667647&amp;navigate=yes" target="_blank" rel="noopener">Ouvrir dans Waze</a>
+        <a class="bouton secondaire" href="https://waze.com/ul?ll=43.772285,4.667647&amp;navigate=yes" target="_blank" rel="noopener">Waze</a>
         <a class="bouton secondaire" href="https://maps.apple.com/?daddr=43.772285,4.667647" target="_blank" rel="noopener">Plans (Apple)</a>
       </div>
     </section>
 
-    <section class="cadre centre">
-      <h2>Le thème&nbsp;: un marché d'automne au temps des Lumières</h2>
-      <p>
-        Courges et pommes, paniers d'osier, étals de toile rayée, musiciens et marchands&nbsp;:
-        nous transformons le domaine en marché automnal du XVIII<sup>e</sup> siècle.
-        Venez costumés en gentilhomme, en dame de cour, en marchande de fruits ou en voyageur
-        venu des Amériques — tout est permis, du plus simple au plus fastueux&nbsp;!
+    <section class="panneau centre">
+      <h2>Un marché d'automne au siècle des Lumières</h2>
+      <p class="chapeau" style="max-width:760px;margin:0 auto">
+        Courges et pommes, paniers d'osier, étals de toile et musiciens&nbsp;: le domaine se fera place de marché,
+        et nous vous espérons parés en gentilshommes et grandes dames, marchands ou voyageurs venus des Amériques.
       </p>
       <div class="boutons">
-        <a class="bouton" href="rsvp.html">Je confirme ma venue</a>
-        <a class="bouton secondaire" href="costumes.html">Idées de costumes</a>
+        <a class="bouton" href="rsvp.html">Confirmer ma venue</a>
+        <a class="bouton secondaire" href="costumes.html">Inspirations costumes</a>
         <a class="bouton secondaire" href="hebergements.html">Où dormir&nbsp;?</a>
       </div>
     </section>
@@ -115,7 +99,7 @@
 
   <footer>
     <span class="initiales">F &amp; J</span>
-    Florence &amp; Jean-Yves — 23 octobre 2027 — Domaine des Mylords, Tarascon
+    Florence &amp; Jean-Yves — samedi 23 octobre 2027 — Domaine des Mylords, Tarascon
   </footer>
 
   <script src="js/config.js"></script>

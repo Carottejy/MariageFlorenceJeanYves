@@ -3,50 +3,26 @@
 
   var CONFIG = window.MARIAGE_CONFIG || {};
 
-  /* ---------- Feuilles d'automne ---------- */
-  function semerFeuilles() {
-    var conteneur = document.createElement("div");
-    conteneur.className = "feuilles";
-    conteneur.setAttribute("aria-hidden", "true");
-    var symboles = ["🍂", "🍁", "🍃", "🍂", "🍁"];
-    var nombre = window.innerWidth < 700 ? 7 : 14;
-    for (var i = 0; i < nombre; i++) {
-      var f = document.createElement("span");
-      f.className = "feuille";
-      f.textContent = symboles[i % symboles.length];
-      f.style.left = Math.random() * 100 + "vw";
-      f.style.fontSize = 16 + Math.random() * 16 + "px";
-      f.style.animationDuration = 14 + Math.random() * 16 + "s";
-      f.style.animationDelay = -Math.random() * 30 + "s";
-      conteneur.appendChild(f);
-    }
-    document.body.appendChild(conteneur);
-  }
-
   /* ---------- Compte à rebours ---------- */
   function compteARebours() {
     var zone = document.getElementById("compte-a-rebours");
     if (!zone || !CONFIG.dateCeremonie) return;
     var cible = new Date(CONFIG.dateCeremonie).getTime();
-
     function maj() {
       var reste = cible - Date.now();
       if (reste <= 0) {
-        zone.innerHTML = "<p class='sous-titre'>Le grand jour est arrivé&nbsp;!</p>";
+        zone.innerHTML = "<p class='chapeau'>Le grand jour est arrivé&nbsp;!</p>";
         return;
       }
-      var j = Math.floor(reste / 86400000);
-      var h = Math.floor((reste % 86400000) / 3600000);
-      var m = Math.floor((reste % 3600000) / 60000);
-      zone.querySelector("[data-j]").textContent = j;
-      zone.querySelector("[data-h]").textContent = h;
-      zone.querySelector("[data-m]").textContent = m;
+      zone.querySelector("[data-j]").textContent = Math.floor(reste / 86400000);
+      zone.querySelector("[data-h]").textContent = Math.floor((reste % 86400000) / 3600000);
+      zone.querySelector("[data-m]").textContent = Math.floor((reste % 3600000) / 60000);
     }
     maj();
     setInterval(maj, 30000);
   }
 
-  /* ---------- RSVP ---------- */
+  /* ---------- Questionnaire de confirmation ---------- */
   function formulaireRSVP() {
     var form = document.getElementById("rsvp");
     if (!form) return;
@@ -60,15 +36,11 @@
     var total = document.getElementById("total-convives");
     var retour = document.getElementById("message-retour");
 
-    // Boutons + / −
     form.querySelectorAll(".compteur button").forEach(function (b) {
       b.addEventListener("click", function () {
         var champ = document.getElementById(b.dataset.cible);
-        var v = parseInt(champ.value, 10) || 0;
-        v += b.dataset.pas === "+" ? 1 : -1;
-        var min = parseInt(champ.min, 10) || 0;
-        var max = parseInt(champ.max, 10) || 20;
-        champ.value = Math.max(min, Math.min(max, v));
+        var v = (parseInt(champ.value, 10) || 0) + (b.dataset.pas === "+" ? 1 : -1);
+        champ.value = Math.max(parseInt(champ.min, 10) || 0, Math.min(parseInt(champ.max, 10) || 20, v));
         majTotal();
       });
     });
@@ -77,15 +49,10 @@
       var c = form.querySelector("input[name='presence']:checked");
       return c ? c.value : "";
     }
-
     function majTotal() {
-      var a = parseInt(adultes.value, 10) || 0;
-      var e = parseInt(enfants.value, 10) || 0;
-      var t = a + e;
-      total.textContent = t === 0 ? "" :
-        "Soit " + t + " convive" + (t > 1 ? "s" : "") + " au total.";
+      var t = (parseInt(adultes.value, 10) || 0) + (parseInt(enfants.value, 10) || 0);
+      total.textContent = t ? "Soit " + t + " convive" + (t > 1 ? "s" : "") + " au total." : "";
     }
-
     function majPresence() {
       var vient = presence() !== "Non";
       blocNombres.classList.toggle("masque", !vient);
@@ -93,16 +60,13 @@
       if (vient && (parseInt(adultes.value, 10) || 0) < 1) adultes.value = 1;
       majTotal();
     }
-
-    form.querySelectorAll("input[name='presence']").forEach(function (r) {
-      r.addEventListener("change", majPresence);
-    });
+    form.querySelectorAll("input[name='presence']").forEach(function (r) { r.addEventListener("change", majPresence); });
     adultes.addEventListener("input", majTotal);
     enfants.addEventListener("input", majTotal);
     majPresence();
 
-    function afficher(msg, erreur) {
-      retour.innerHTML = msg;
+    function afficher(html, erreur) {
+      retour.innerHTML = html;
       retour.classList.add("visible");
       retour.classList.toggle("erreur", !!erreur);
       retour.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -113,7 +77,7 @@
       if (!form.reportValidity()) return;
 
       var vient = presence() !== "Non";
-      var donnees = {
+      var d = {
         nom: form.nom.value.trim(),
         prenom: form.prenom.value.trim(),
         presence: presence(),
@@ -121,29 +85,31 @@
         enfants_moins_de_12_ans: vient ? enfants.value : "0",
         email: form.email.value.trim(),
         telephone: form.telephone.value.trim(),
-        message: form.message.value.trim()
+        message: form.message.value.trim(),
+        website: form.website ? form.website.value : ""
       };
-
       var bouton = form.querySelector("button[type='submit']");
+      var merci = vient
+        ? "<h3>Grand merci, " + echapper(d.prenom) + "&nbsp;!</h3><p>Votre réponse est bien enregistrée. Il nous tarde de vous retrouver au marché.</p>"
+        : "<h3>Merci, " + echapper(d.prenom) + ".</h3><p>Votre réponse est bien enregistrée. Vous nous manquerez&nbsp;!</p>";
 
       if (CONFIG.formEndpoint) {
         bouton.disabled = true;
         bouton.textContent = "Envoi en cours…";
+        // Google Apps Script : envoi en text/plain + no-cors (pas de pré-requête CORS).
         fetch(CONFIG.formEndpoint, {
           method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(Object.assign({ _subject: "RSVP mariage — " + donnees.prenom + " " + donnees.nom }, donnees))
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(d)
         })
-          .then(function (r) {
-            if (!r.ok) throw new Error("HTTP " + r.status);
+          .then(function () {
             form.reset();
             majPresence();
-            afficher(vient
-              ? "<h3>Grand merci, " + echapper(donnees.prenom) + "&nbsp;!</h3><p>Votre réponse est bien enregistrée. Nous avons hâte de vous retrouver au marché&nbsp;!</p>"
-              : "<h3>Merci, " + echapper(donnees.prenom) + ".</h3><p>Votre réponse est bien enregistrée. Vous nous manquerez&nbsp;!</p>");
+            afficher(merci);
           })
           .catch(function () {
-            afficher("<p>Oups, l'envoi n'a pas abouti. Réessayez dans un instant, ou écrivez-nous directement à <a href='mailto:" + CONFIG.emailContact + "'>" + CONFIG.emailContact + "</a>.</p>", true);
+            afficher("<p>L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou écrivez-nous à <a href='mailto:" + CONFIG.emailContact + "'>" + CONFIG.emailContact + "</a>.</p>", true);
           })
           .then(function () {
             bouton.disabled = false;
@@ -152,23 +118,16 @@
         return;
       }
 
-      // Repli : e-mail pré-rempli
+      // Repli tant que le service n'est pas branché : e-mail pré-rempli.
       var corps = [
-        "Nom : " + donnees.nom,
-        "Prénom : " + donnees.prenom,
-        "Présence : " + donnees.presence,
-        "Adultes et enfants de plus de 12 ans : " + donnees.adultes_et_plus_de_12_ans,
-        "Enfants de moins de 12 ans : " + donnees.enfants_moins_de_12_ans,
-        "E-mail : " + (donnees.email || "—"),
-        "Téléphone : " + (donnees.telephone || "—"),
-        "",
-        "Message : " + (donnees.message || "—")
+        "Nom : " + d.nom, "Prénom : " + d.prenom, "Présence : " + d.presence,
+        "Adultes et enfants de plus de 12 ans : " + d.adultes_et_plus_de_12_ans,
+        "Enfants de moins de 12 ans : " + d.enfants_moins_de_12_ans,
+        "E-mail : " + (d.email || "—"), "Téléphone : " + (d.telephone || "—"), "", "Message : " + (d.message || "—")
       ].join("\n");
-      var lien = "mailto:" + CONFIG.emailContact +
-        "?subject=" + encodeURIComponent("RSVP mariage — " + donnees.prenom + " " + donnees.nom) +
-        "&body=" + encodeURIComponent(corps);
+      var lien = "mailto:" + CONFIG.emailContact + "?subject=" + encodeURIComponent("RSVP mariage — " + d.prenom + " " + d.nom) + "&body=" + encodeURIComponent(corps);
       window.location.href = lien;
-      afficher("<h3>Presque fini&nbsp;!</h3><p>Votre messagerie vient de s'ouvrir avec votre réponse pré-remplie&nbsp;: il ne reste qu'à cliquer sur <strong>Envoyer</strong>.</p><p>Rien ne s'est ouvert&nbsp;? Écrivez-nous à <a href='" + lien + "'>" + CONFIG.emailContact + "</a>.</p>");
+      afficher("<h3>Presque fini&nbsp;!</h3><p>Votre messagerie vient de s'ouvrir avec votre réponse&nbsp;: il ne reste qu'à cliquer sur <strong>Envoyer</strong>.</p>");
     });
   }
 
@@ -178,11 +137,11 @@
     });
   }
 
-  /* ---------- Filtres (costumes & hébergements) ---------- */
-  function filtres(selecteurBoutons, selecteurElements, attribut) {
-    var boutons = document.querySelectorAll(selecteurBoutons);
+  /* ---------- Filtres ---------- */
+  function filtres(selBoutons, selElements, attribut) {
+    var boutons = document.querySelectorAll(selBoutons);
     if (!boutons.length) return;
-    var elements = document.querySelectorAll(selecteurElements);
+    var elements = document.querySelectorAll(selElements);
     boutons.forEach(function (b) {
       b.addEventListener("click", function () {
         boutons.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
@@ -196,11 +155,31 @@
     });
   }
 
+  /* ---------- Visionneuse des tableaux ---------- */
+  function visionneuse() {
+    var v = document.getElementById("visionneuse");
+    if (!v) return;
+    var img = v.querySelector("img");
+    var leg = v.querySelector("figcaption");
+    function fermer() { v.classList.remove("ouverte"); img.removeAttribute("src"); }
+    document.querySelectorAll(".tableau button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        img.src = b.dataset.grand;
+        img.alt = b.querySelector("img").alt;
+        leg.innerHTML = b.dataset.legende + " — <a href='" + b.dataset.page + "' target='_blank' rel='noopener'>source</a>";
+        v.classList.add("ouverte");
+        v.querySelector(".fermer").focus();
+      });
+    });
+    v.addEventListener("click", function (e) { if (e.target === v || e.target.classList.contains("fermer")) fermer(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") fermer(); });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
-    semerFeuilles();
     compteARebours();
     formulaireRSVP();
     filtres(".filtres button", ".logement", "data-type");
-    filtres(".onglets button", ".costume", "data-zone");
+    filtres(".onglets button", ".tableau", "data-zone");
+    visionneuse();
   });
 })();

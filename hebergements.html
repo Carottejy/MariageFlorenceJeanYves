@@ -5,26 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Se loger — Florence &amp; Jean-Yves</title>
   <meta name="description" content="Hôtels, chambres d'hôtes, gîtes et locations à moins de 20 minutes du Domaine des Mylords, Tarascon.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍂</text></svg>">
+  <meta name="theme-color" content="#7f3418">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23b4532a'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='Georgia' font-size='46' fill='%23f3e3b6'%3EFJ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+SC:wght@500;600&family=IM+Fell+French+Canon:ital@1&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="auvent" aria-hidden="true"></div>
-  <nav class="nav" aria-label="Navigation principale">
-    <a href="index.html">L'Invitation</a>
-    <a href="rsvp.html">Confirmer sa venue</a>
-    <a href="costumes.html">Costumes</a>
-    <a href="hebergements.html" aria-current="page">Se loger</a>
-  </nav>
+  <header class="entete">
+    <a class="monogramme" href="index.html" aria-label="Accueil">F<span>&amp;</span>J</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">L'Invitation</a>
+      <a href="rsvp.html">Répondre</a>
+      <a href="costumes.html">Costumes</a>
+      <a href="hebergements.html" aria-current="page">Se loger</a>
+    </nav>
+  </header>
 
   <main>
-    <section class="cadre">
+    <section class="panneau">
       <div class="centre">
         <h1>Où poser ses malles&nbsp;?</h1>
-        <p class="sous-titre">Hôtels, chambres d'hôtes et gîtes à moins de 20&nbsp;minutes du Domaine des Mylords</p>
+        <p class="chapeau">Hôtels, chambres d'hôtes et gîtes à moins de 20&nbsp;minutes du Domaine des Mylords</p>
         <p>Le domaine n'a pas d'hébergement sur place. Voici les adresses des environs —
           Tarascon, Beaucaire, Saint-Étienne-du-Grès, Boulbon, Fontvieille et Arles.
           <strong>Pensez à réserver tôt</strong>&nbsp;: plusieurs établissements ferment fin octobre.</p>
@@ -41,324 +44,298 @@
 
         <!-- ============ HÔTELS ============ -->
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 3 min</span>
-          <div class="type">Hôtel ★★★★ · Tarascon</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★★ · Tarascon</div><span class="trajet">≈ 3 min</span></div>
           <h3>Mas des Comtes de Provence</h3>
           <address>651 chemin du Mas de Provence, Petite route d'Arles, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490910013">04 90 91 00 13</a></li>
-            <li><span class="lib">🌐</span><a href="https://www.mas-provence.com" target="_blank" rel="noopener">mas-provence.com</a> <small>(contact par le site)</small></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490910013">04 90 91 00 13</a></li>
+            <li><span class="lib">Site</span><a href="https://www.mas-provence.com" target="_blank" rel="noopener">mas-provence.com</a> <small>(contact par le site)</small></li>
           </ul>
           <p class="note">Sur la même route que le domaine. Ancien relais de chasse du roi René, parc et piscine. Ouvert d'avril à début novembre.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 7 min</span>
-          <div class="type">Hôtel · Tarascon centre</div>
+          <div class="entete-logement"><div class="type">Hôtel · Tarascon centre</div><span class="trajet">≈ 7 min</span></div>
           <h3>Hôtel Le Provençal</h3>
           <address>12 cours Aristide Briand, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490911141">04 90 91 11 41</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@leprovencal-tarascon.com">contact@leprovencal-tarascon.com</a></li>
-            <li><span class="lib">🌐</span><a href="http://www.leprovencal-tarascon.com" target="_blank" rel="noopener">leprovencal-tarascon.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490911141">04 90 91 11 41</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@leprovencal-tarascon.com">contact@leprovencal-tarascon.com</a></li>
+            <li><span class="lib">Site</span><a href="http://www.leprovencal-tarascon.com" target="_blank" rel="noopener">leprovencal-tarascon.com</a></li>
           </ul>
           <p class="note">Hôtel familial près du château et de la collégiale Sainte-Marthe.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 7 min</span>
-          <div class="type">Hôtel ★★★ · Tarascon centre</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Tarascon centre</div><span class="trajet">≈ 7 min</span></div>
           <h3>Hôtel des Artistes <small>(ex-Hôtel de Provence)</small></h3>
           <address>7 boulevard Victor Hugo, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33699581958">06 99 58 19 58</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@hoteldeprovencetarascon.fr">contact@hoteldeprovencetarascon.fr</a></li>
-            <li><span class="lib">🌐</span><a href="http://www.hotel-provence-tarascon.com" target="_blank" rel="noopener">hotel-provence-tarascon.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33699581958">06 99 58 19 58</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@hoteldeprovencetarascon.fr">contact@hoteldeprovencetarascon.fr</a></li>
+            <li><span class="lib">Site</span><a href="http://www.hotel-provence-tarascon.com" target="_blank" rel="noopener">hotel-provence-tarascon.com</a></li>
           </ul>
           <p class="note">À deux pas du centre historique, parking gratuit.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 7 min</span>
-          <div class="type">Hôtel ★★ · Tarascon centre</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★ · Tarascon centre</div><span class="trajet">≈ 7 min</span></div>
           <h3>Hôtel du Viaduc</h3>
           <address>9 rue du Viaduc, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490911667">04 90 91 16 67</a></li>
-            <li><span class="lib">✉</span><em>par téléphone ou via les plateformes</em></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490911667">04 90 91 16 67</a></li>
+            <li><span class="lib">Mél.</span><em>par téléphone ou via les plateformes</em></li>
           </ul>
           <p class="note">16 chambres, jardin et piscine, près de la gare. Animaux acceptés.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 7 min</span>
-          <div class="type">Hôtel · Tarascon centre</div>
+          <div class="entete-logement"><div class="type">Hôtel · Tarascon centre</div><span class="trajet">≈ 7 min</span></div>
           <h3>Hôtel Les Échevins</h3>
           <address>26 boulevard Itam, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490910170">04 90 91 01 70</a></li>
-            <li><span class="lib">✉</span><em>par téléphone ou via les plateformes</em></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490910170">04 90 91 01 70</a></li>
+            <li><span class="lib">Mél.</span><em>par téléphone ou via les plateformes</em></li>
           </ul>
           <p class="note">40 chambres dans une demeure ancienne du centre-ville.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 8 min</span>
-          <div class="type">Hôtel ★★★ · Tarascon</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Tarascon</div><span class="trajet">≈ 8 min</span></div>
           <h3>Les Mazets des Roches</h3>
           <address>Route de Fontvieille (D33), 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490913489">04 90 91 34 89</a></li>
-            <li><span class="lib">🌐</span><a href="http://www.mazetsdesroches.com" target="_blank" rel="noopener">mazetsdesroches.com</a> <small>(contact par le site)</small></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490913489">04 90 91 34 89</a></li>
+            <li><span class="lib">Site</span><a href="http://www.mazetsdesroches.com" target="_blank" rel="noopener">mazetsdesroches.com</a> <small>(contact par le site)</small></li>
           </ul>
           <p class="note">37 chambres dans une pinède au pied des Alpilles, grande piscine, tennis. Idéal pour les groupes.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 10 min</span>
-          <div class="type">Hôtel ★★★ · Beaucaire</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Beaucaire</div><span class="trajet">≈ 10 min</span></div>
           <h3>Hôtel Les Doctrinaires</h3>
           <address>6 quai du Général de Gaulle, 30300 Beaucaire</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33466592370">04 66 59 23 70</a></li>
-            <li><span class="lib">🌐</span><a href="http://www.hotel-doctrinaires-30.com" target="_blank" rel="noopener">hotel-doctrinaires-30.com</a> <small>(contact par le site)</small></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33466592370">04 66 59 23 70</a></li>
+            <li><span class="lib">Site</span><a href="http://www.hotel-doctrinaires-30.com" target="_blank" rel="noopener">hotel-doctrinaires-30.com</a> <small>(contact par le site)</small></li>
           </ul>
           <p class="note">32 chambres dans un collège du XVII<sup>e</sup> siècle, au bord du canal. Restaurant.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Hôtel ★★★ · Beaucaire</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Beaucaire</div><span class="trajet">≈ 12 min</span></div>
           <h3>Logis Hôtel Les Vignes Blanches</h3>
           <address>67 avenue de Farciennes, 30300 Beaucaire</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33466591312">04 66 59 13 12</a></li>
-            <li><span class="lib">✉</span><em>par téléphone ou via les plateformes</em></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33466591312">04 66 59 13 12</a></li>
+            <li><span class="lib">Mél.</span><em>par téléphone ou via les plateformes</em></li>
           </ul>
           <p class="note">Grand établissement avec jardin et piscine, à prix doux.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Hôtel ★★★ · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>Hôtel Le Mas Vidau</h3>
           <address>3 avenue Notre-Dame du Château, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490476371">04 90 47 63 71</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@hotel-mas-vidau.fr">contact@hotel-mas-vidau.fr</a></li>
-            <li><span class="lib">🌐</span><a href="https://www.hotel-mas-vidau.com" target="_blank" rel="noopener">hotel-mas-vidau.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490476371">04 90 47 63 71</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@hotel-mas-vidau.fr">contact@hotel-mas-vidau.fr</a></li>
+            <li><span class="lib">Site</span><a href="https://www.hotel-mas-vidau.com" target="_blank" rel="noopener">hotel-mas-vidau.com</a></li>
           </ul>
           <p class="note">8 chambres dans un mas de 1870, piscine. Ouvert de mi-mars à mi-décembre.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 15 min</span>
-          <div class="type">Hôtel ★★★ · Fontvieille</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Fontvieille</div><span class="trajet">≈ 15 min</span></div>
           <h3>Hôtel Belesso</h3>
           <address>36 avenue des Baux, 13990 Fontvieille</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490183140">04 90 18 31 40</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@hotelbelesso.fr">contact@hotelbelesso.fr</a></li>
-            <li><span class="lib">🌐</span><a href="https://www.hotelbelesso.fr" target="_blank" rel="noopener">hotelbelesso.fr</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490183140">04 90 18 31 40</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@hotelbelesso.fr">contact@hotelbelesso.fr</a></li>
+            <li><span class="lib">Site</span><a href="https://www.hotelbelesso.fr" target="_blank" rel="noopener">hotelbelesso.fr</a></li>
           </ul>
           <p class="note">38 chambres, restaurant, piscine chauffée et parc arboré.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 15 min</span>
-          <div class="type">Hôtel ★★★ · Fontvieille</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Fontvieille</div><span class="trajet">≈ 15 min</span></div>
           <h3>Best Western Le Val Majour</h3>
           <address>22 route d'Arles, 13990 Fontvieille</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490546233">04 90 54 62 33</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@valmajour.com">contact@valmajour.com</a></li>
-            <li><span class="lib">🌐</span><a href="http://www.valmajour.com" target="_blank" rel="noopener">valmajour.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490546233">04 90 54 62 33</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@valmajour.com">contact@valmajour.com</a></li>
+            <li><span class="lib">Site</span><a href="http://www.valmajour.com" target="_blank" rel="noopener">valmajour.com</a></li>
           </ul>
           <p class="note">32 chambres dans un parc aux arbres centenaires, piscine, tennis.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 15 min</span>
-          <div class="type">Hôtel de charme · Fontvieille</div>
+          <div class="entete-logement"><div class="type">Hôtel de charme · Fontvieille</div><span class="trajet">≈ 15 min</span></div>
           <h3>La Régalido</h3>
           <address>118 avenue Frédéric Mistral, 13990 Fontvieille</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490546022">04 90 54 60 22</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@laregalido.com">contact@laregalido.com</a></li>
-            <li><span class="lib">🌐</span><a href="https://www.laregalido.com" target="_blank" rel="noopener">laregalido.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490546022">04 90 54 60 22</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@laregalido.com">contact@laregalido.com</a></li>
+            <li><span class="lib">Site</span><a href="https://www.laregalido.com" target="_blank" rel="noopener">laregalido.com</a></li>
           </ul>
           <p class="note">Ancien moulin à huile, spa et restaurant gastronomique. Haut de gamme.</p>
         </article>
 
         <article class="logement" data-type="hotel">
-          <span class="trajet">≈ 18 min</span>
-          <div class="type">Hôtel ★★★ · Arles centre</div>
+          <div class="entete-logement"><div class="type">Hôtel ★★★ · Arles centre</div><span class="trajet">≈ 18 min</span></div>
           <h3>Hôtel Spa Le Calendal</h3>
           <address>5 rue Porte de Laure, 13200 Arles</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490961189">04 90 96 11 89</a></li>
-            <li><span class="lib">✉</span><a href="mailto:contact@lecalendal.com">contact@lecalendal.com</a></li>
-            <li><span class="lib">🌐</span><a href="http://www.lecalendal.com" target="_blank" rel="noopener">lecalendal.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490961189">04 90 96 11 89</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:contact@lecalendal.com">contact@lecalendal.com</a></li>
+            <li><span class="lib">Site</span><a href="http://www.lecalendal.com" target="_blank" rel="noopener">lecalendal.com</a></li>
           </ul>
           <p class="note">Entre les arènes et le théâtre antique, pour ceux qui veulent visiter Arles.</p>
         </article>
 
         <!-- ============ CHAMBRES D'HÔTES ============ -->
         <article class="logement" data-type="chambre gite">
-          <span class="trajet">≈ 5 min</span>
-          <div class="type">Chambre d'hôtes &amp; gîte · Tarascon</div>
+          <div class="entete-logement"><div class="type">Chambre d'hôtes &amp; gîte · Tarascon</div><span class="trajet">≈ 5 min</span></div>
           <h3>Mas Maurane <small>(L'Arlésienne · Le Bougainvilliers)</small></h3>
           <address>2162 petit chemin d'Arles, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33683328023">06 83 32 80 23</a></li>
-            <li><span class="lib">✉</span><a href="mailto:mas.maurane13@gmail.com">mas.maurane13@gmail.com</a></li>
-            <li><span class="lib">🌐</span><a href="https://mas-maurane.com" target="_blank" rel="noopener">mas-maurane.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33683328023">06 83 32 80 23</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:mas.maurane13@gmail.com">mas.maurane13@gmail.com</a></li>
+            <li><span class="lib">Site</span><a href="https://mas-maurane.com" target="_blank" rel="noopener">mas-maurane.com</a></li>
           </ul>
           <p class="note">Mas du XVII<sup>e</sup> sur la route d'Arles, tout près du domaine. Chambre avec spa privatif et appartement.</p>
         </article>
 
         <article class="logement" data-type="chambre">
-          <span class="trajet">≈ 7 min</span>
-          <div class="type">Chambres d'hôtes · Tarascon centre</div>
+          <div class="entete-logement"><div class="type">Chambres d'hôtes · Tarascon centre</div><span class="trajet">≈ 7 min</span></div>
           <h3>Le Clos des Consuls</h3>
           <address>54 rue Blanqui, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33620563855">06 20 56 38 55</a></li>
-            <li><span class="lib">✉</span><em>par téléphone ou via les plateformes</em></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33620563855">06 20 56 38 55</a></li>
+            <li><span class="lib">Mél.</span><em>par téléphone ou via les plateformes</em></li>
           </ul>
           <p class="note">2 chambres (6 personnes) dans un hôtel particulier près du théâtre.</p>
         </article>
 
         <article class="logement" data-type="chambre">
-          <span class="trajet">≈ 10 min</span>
-          <div class="type">Chambres d'hôtes · Tarascon</div>
+          <div class="entete-logement"><div class="type">Chambres d'hôtes · Tarascon</div><span class="trajet">≈ 10 min</span></div>
           <h3>Mas Armelin</h3>
           <address>Hameau d'Armelin, 6a route de Maillane, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490981879">04 90 98 18 79</a></li>
-            <li><span class="lib">✉</span><a href="mailto:mas-armelin@outlook.fr">mas-armelin@outlook.fr</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490981879">04 90 98 18 79</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:mas-armelin@outlook.fr">mas-armelin@outlook.fr</a></li>
           </ul>
           <p class="note">Bergerie de 1733 rénovée, 5 chambres (12 personnes).</p>
         </article>
 
         <article class="logement" data-type="chambre gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Chambres d'hôtes &amp; appartement · Tarascon</div>
+          <div class="entete-logement"><div class="type">Chambres d'hôtes &amp; appartement · Tarascon</div><span class="trajet">≈ 12 min</span></div>
           <h3>Mas de Monge</h3>
           <address>Chemin du Mas de Monge, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33623425058">06 23 42 50 58</a></li>
-            <li><span class="lib">✉</span><a href="mailto:masdemonge@gmail.com">masdemonge@gmail.com</a></li>
-            <li><span class="lib">🌐</span><a href="https://www.masdemonge.com" target="_blank" rel="noopener">masdemonge.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33623425058">06 23 42 50 58</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:masdemonge@gmail.com">masdemonge@gmail.com</a></li>
+            <li><span class="lib">Site</span><a href="https://www.masdemonge.com" target="_blank" rel="noopener">masdemonge.com</a></li>
           </ul>
           <p class="note">Mas du XVIII<sup>e</sup> au pied de la Montagnette, parc de 3&nbsp;ha, piscine. 3 chambres + un appartement.</p>
         </article>
 
         <article class="logement" data-type="chambre">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Maison d'hôtes · Tarascon</div>
+          <div class="entete-logement"><div class="type">Maison d'hôtes · Tarascon</div><span class="trajet">≈ 12 min</span></div>
           <h3>Mas des Prêcheurs</h3>
           <address>1136 chemin de la Chapelle Saint-Victor, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><em>non communiqué — réservation via les plateformes</em></li>
+            <li><span class="lib">Tél.</span><em>non communiqué — réservation via les plateformes</em></li>
           </ul>
           <p class="note">Mas du XVII<sup>e</sup> dans un parc de 18&nbsp;ha, 5 chambres, piscine. Haut de gamme, sans enfants.</p>
         </article>
 
         <article class="logement" data-type="chambre gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Chambres d'hôtes &amp; villa · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Chambres d'hôtes &amp; villa · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>Arty Provence</h3>
           <address>17 avenue des Pins, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">🌐</span><a href="https://www.artyprovence.fr" target="_blank" rel="noopener">artyprovence.fr</a> <small>(contact par le site)</small></li>
+            <li><span class="lib">Site</span><a href="https://www.artyprovence.fr" target="_blank" rel="noopener">artyprovence.fr</a> <small>(contact par le site)</small></li>
           </ul>
           <p class="note">4 chambres design avec vue sur les Alpilles, piscine chauffée. Ouvert de mars à fin octobre.</p>
         </article>
 
         <article class="logement" data-type="chambre">
-          <span class="trajet">≈ 15 min</span>
-          <div class="type">Chambres d'hôtes · Boulbon</div>
+          <div class="entete-logement"><div class="type">Chambres d'hôtes · Boulbon</div><span class="trajet">≈ 15 min</span></div>
           <h3>La Maison Saint Jean</h3>
           <address>1 rue Mont Saint-Jean, 13150 Boulbon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><a href="tel:+33490938547">04 90 93 85 47</a></li>
-            <li><span class="lib">✉</span><a href="mailto:knijff.burg@gmail.com">knijff.burg@gmail.com</a></li>
-            <li><span class="lib">🌐</span><a href="https://lamaisonsaintjean.com" target="_blank" rel="noopener">lamaisonsaintjean.com</a></li>
+            <li><span class="lib">Tél.</span><a href="tel:+33490938547">04 90 93 85 47</a></li>
+            <li><span class="lib">Mél.</span><a href="mailto:knijff.burg@gmail.com">knijff.burg@gmail.com</a></li>
+            <li><span class="lib">Site</span><a href="https://lamaisonsaintjean.com" target="_blank" rel="noopener">lamaisonsaintjean.com</a></li>
           </ul>
           <p class="note">4 chambres dans le village médiéval. Ouverture annoncée l'été&nbsp;: à vérifier pour octobre.</p>
         </article>
 
         <!-- ============ GÎTES & LOCATIONS ============ -->
         <article class="logement" data-type="gite">
-          <span class="trajet">≈ 8 min</span>
-          <div class="type">Location de vacances · Tarascon</div>
+          <div class="entete-logement"><div class="type">Location de vacances · Tarascon</div><span class="trajet">≈ 8 min</span></div>
           <h3>Calenco des Carlène</h3>
           <address>Allée des Lauriers, chemin de Souspiron, 13150 Tarascon</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><em>via l'office de tourisme ou les plateformes</em></li>
+            <li><span class="lib">Tél.</span><em>via l'office de tourisme ou les plateformes</em></li>
           </ul>
           <p class="note">Grande maison à louer, idéale pour une famille ou un groupe d'amis.</p>
         </article>
 
         <article class="logement" data-type="gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Gîtes · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Gîtes · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>La Vigueirado <small>(gîtes Camargue &amp; Alpilles)</small></h3>
           <address>19 chemin du Moulin Brûlé, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><em>via l'office de tourisme ou les plateformes</em></li>
+            <li><span class="lib">Tél.</span><em>via l'office de tourisme ou les plateformes</em></li>
           </ul>
           <p class="note">Deux gîtes pour couples sur une propriété de 1&nbsp;400&nbsp;m², ouverts toute l'année.</p>
         </article>
 
         <article class="logement" data-type="gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Gîte de France · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Gîte de France · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>Mas de la Tourache</h3>
           <address>505 chemin du Mas Jullian, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">🌐</span><a href="https://www.gites-de-france.com/fr/provence-alpes-cote-dazur/bouches-du-rhone" target="_blank" rel="noopener">Réserver via Gîtes de France 13</a></li>
+            <li><span class="lib">Site</span><a href="https://www.gites-de-france.com/fr/provence-alpes-cote-dazur/bouches-du-rhone" target="_blank" rel="noopener">Réserver via Gîtes de France 13</a></li>
           </ul>
           <p class="note">Maison de 156&nbsp;m² pour 8 personnes, piscine, climatisation.</p>
         </article>
 
         <article class="logement" data-type="gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Gîte de France · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Gîte de France · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>Le Petit Grésouillais</h3>
           <address>5 avenue d'Arles, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">🌐</span><a href="https://www.gites-de-france.com/fr/provence-alpes-cote-dazur/bouches-du-rhone" target="_blank" rel="noopener">Réserver via Gîtes de France 13</a></li>
+            <li><span class="lib">Site</span><a href="https://www.gites-de-france.com/fr/provence-alpes-cote-dazur/bouches-du-rhone" target="_blank" rel="noopener">Réserver via Gîtes de France 13</a></li>
           </ul>
           <p class="note">Petit gîte neuf dans le village.</p>
         </article>
 
         <article class="logement" data-type="gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Villa · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Villa · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>Mazet du Loup</h3>
           <address>Mas du Loup, 20 avenue d'Arles, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><em>via l'office de tourisme ou les plateformes</em></li>
+            <li><span class="lib">Tél.</span><em>via l'office de tourisme ou les plateformes</em></li>
           </ul>
           <p class="note">Villa provençale sur 1,3&nbsp;ha, accès direct au GR6.</p>
         </article>
 
         <article class="logement" data-type="gite">
-          <span class="trajet">≈ 12 min</span>
-          <div class="type">Gîte · Saint-Étienne-du-Grès</div>
+          <div class="entete-logement"><div class="type">Gîte · Saint-Étienne-du-Grès</div><span class="trajet">≈ 12 min</span></div>
           <h3>La Grange <small>(Mas de la Roche Taillée)</small></h3>
           <address>Chemin d'Anez, 13103 Saint-Étienne-du-Grès</address>
           <ul class="contact">
-            <li><span class="lib">☎</span><em>via l'office de tourisme ou les plateformes</em></li>
+            <li><span class="lib">Tél.</span><em>via l'office de tourisme ou les plateformes</em></li>
           </ul>
           <p class="note">Gîte avec piscine et climatisation, ouvert toute l'année.</p>
         </article>
       </div>
     </section>
 
-    <section class="cadre">
+    <section class="panneau">
       <h2 class="centre">Airbnb &amp; autres locations</h2>
       <p class="centre">Les loueurs Airbnb et Abritel ne publient ni e-mail ni téléphone&nbsp;: on les contacte par la messagerie de la plateforme.
         Ces liens ouvrent directement une recherche autour de Tarascon pour le week-end du mariage (du 22 au 24 octobre 2027).</p>
@@ -376,7 +353,7 @@
 
   <footer>
     <span class="initiales">F &amp; J</span>
-    Florence &amp; Jean-Yves — 23 octobre 2027 — Domaine des Mylords, Tarascon
+    Florence &amp; Jean-Yves — samedi 23 octobre 2027 — Domaine des Mylords, Tarascon
   </footer>
 
   <script src="js/config.js"></script>

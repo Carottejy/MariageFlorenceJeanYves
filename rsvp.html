@@ -3,32 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Confirmer sa venue — Florence &amp; Jean-Yves</title>
+  <title>Répondre — Florence &amp; Jean-Yves</title>
   <meta name="description" content="Confirmez votre présence au mariage de Florence et Jean-Yves, le 23 octobre 2027.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍂</text></svg>">
+  <meta name="theme-color" content="#7f3418">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23b4532a'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='Georgia' font-size='46' fill='%23f3e3b6'%3EFJ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+SC:wght@500;600&family=IM+Fell+French+Canon:ital@1&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="auvent" aria-hidden="true"></div>
-  <nav class="nav" aria-label="Navigation principale">
-    <a href="index.html">L'Invitation</a>
-    <a href="rsvp.html" aria-current="page">Confirmer sa venue</a>
-    <a href="costumes.html">Costumes</a>
-    <a href="hebergements.html">Se loger</a>
-  </nav>
+  <header class="entete">
+    <a class="monogramme" href="index.html" aria-label="Accueil">F<span>&amp;</span>J</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">L'Invitation</a>
+      <a href="rsvp.html" aria-current="page">Répondre</a>
+      <a href="costumes.html">Costumes</a>
+      <a href="hebergements.html">Se loger</a>
+    </nav>
+  </header>
 
   <main>
-    <section class="cadre">
+    <section class="panneau">
       <div class="centre">
         <h1>Confirmer sa venue</h1>
-        <p class="sous-titre">Merci de nous répondre avant le <span id="date-limite">1er juillet 2027</span>.</p>
-        <p>Une seule réponse par foyer suffit&nbsp;: indiquez simplement combien vous serez.</p>
+        <p class="chapeau">Nous vous serions obligés de bien vouloir répondre avant le <span id="date-limite">1er juillet 2027</span>.</p>
+        <p>Une seule réponse par foyer&nbsp;: indiquez simplement combien vous serez.</p>
       </div>
-
-      <span class="fleuron" aria-hidden="true">❧ ❦ ☙</span>
+      <span class="fleuron" aria-hidden="true"></span>
 
       <form id="rsvp" class="formulaire" novalidate>
         <div class="duo">
@@ -73,6 +75,8 @@
           <p id="total-convives" class="total-convives" aria-live="polite"></p>
         </div>
 
+        <div class="piege" aria-hidden="true"><label for="website">Ne pas remplir</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+
         <div class="duo">
           <div class="champ">
             <label for="email">E-mail <span class="aide">(facultatif)</span></label>
@@ -100,7 +104,7 @@
 
   <footer>
     <span class="initiales">F &amp; J</span>
-    Florence &amp; Jean-Yves — 23 octobre 2027 — Domaine des Mylords, Tarascon
+    Florence &amp; Jean-Yves — samedi 23 octobre 2027 — Domaine des Mylords, Tarascon
   </footer>
 
   <script src="js/config.js"></script>
